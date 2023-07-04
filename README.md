@@ -30,11 +30,16 @@ The objective of this research is to develop novel techniques and methodologies 
 
 The proposed solution has the potential to revolutionize data analysis, decision-making, and automation by enabling LLMs to interact seamlessly with tabular data containing numerical values. This can benefit fields such as finance, healthcare, scientific research, and business intelligence, where numerical data is prevalent. By bridging the gap between language models and tabular data, this research can facilitate more efficient and intelligent data-driven decision-making processes.
 
-## Solution
+## Tried Approaches
+
+We have explored various Langchain agents and ultimately decided on the Chain. Our initial choice was the Pandas Dataframe Agent, but it exceeded the token limit due to the extensive context it required, causing it to fail. We then tested the SQL Database Agent, which functioned well for some queries but reached the request limit because of its constant pinging of the model. Lastly, we opted for the SQLDatabaseChain agent, which was effective in most cases, but it too encountered token limit issues when processing queries with a large data range.
 
 
 ## In Progress
 
+As we are now considering using a vector database and similarity checks to fetch only relevant information, this approach could potentially address the token limit issue. By incorporating similarity checks, the system will only retrieve closely related data, thereby reducing the tokens required for processing.
+
+If you have any suggestions to help mitigate the current limitation, do guide us!
 
 ---
 
